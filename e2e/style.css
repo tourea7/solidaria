@@ -9,7 +9,7 @@ body{
 }
 .navbar {
     width: 100%;
-    background-color: white;
+    background-color: #555;
     overflow: auto;
   }
   
@@ -193,7 +193,7 @@ p{
     filter: grayscale(0);
 }
 .footer{
-    background: #333;
+    background: #555;
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0 20px;
