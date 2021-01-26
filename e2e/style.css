@@ -167,8 +167,11 @@ p{
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    max-width: 600px;
+    width: 300px;
+    height: 200px;
     margin: auto;
+    padding: 12px;
     text-align: center;
     font-family: arial;
     background: #93c572;
@@ -193,7 +196,7 @@ p{
     filter: grayscale(0);
 }
 .footer{
-    background: #555;
+    background: #333;
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0 20px;
@@ -243,9 +246,19 @@ ul{
 .Copyright{
     text-align: center;
 }
+
 @media screen and (max-width: 500px) {
     .navbar a {
       float: none;
       display: block;
     }
+}
+.suggest-ride{
+   
+    background: radial-gradient(#AFEEEE,#93c572);
+    margin-top: 80px;
+    padding: 30px 0; 
+}
+.col-2 .suggest-ride-img{
+    padding: 50px;
 }
