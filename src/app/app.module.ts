@@ -16,10 +16,9 @@ const appRoutes: Routes = [
 { path: 'solidaria' , component: SolidariaComponent },
 { path: 'dailyride' , component: DailyrideComponent},
 { path: 'suggestride' , component: SuggestrideComponent},
-{ path: 'signup' , component:  SignupComponent }
+{ path: 'signup' , component:  SignupComponent },
 { path:'' , component: SolidariaComponent }
-
-]
+];
 
 
 @NgModule({
@@ -39,4 +38,4 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class appModule { }
+export class AppModule { }
