@@ -17,6 +17,8 @@ const appRoutes: Routes = [
 { path: 'dailyride' , component: DailyrideComponent},
 { path: 'suggestride' , component: SuggestrideComponent},
 { path: 'signup' , component:  SignupComponent }
+{ path:'' , component: SolidariaComponent }
+
 ]
 
 
