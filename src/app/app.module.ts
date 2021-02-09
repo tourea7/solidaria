@@ -8,6 +8,17 @@ import { SolidariaComponent } from './solidaria/solidaria.component';
 import { DailyrideComponent } from './dailyride/dailyride.component';
 import { SuggestrideComponent } from './suggestride/suggestride.component';
 import { SignupComponent } from './signup/signup.component';
+import {Routes}  from "@angular/router";
+
+
+const appRoutes: Routes = [
+{ path: 'login' , component: LoginComponent },
+{ path: 'solidaria' , component: SolidariaComponent },
+{ path: 'dailyride' , component: DailyrideComponent},
+{ path: 'suggestride' , component: SuggestrideComponent},
+{ path: 'signup' , component:  SignupComponent }
+]
+
 
 @NgModule({
   declarations: [
@@ -21,6 +32,7 @@ import { SignupComponent } from './signup/signup.component';
   imports: [
     BrowserModule,
     AppRoutingModule
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
