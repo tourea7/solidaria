@@ -9,6 +9,7 @@ import { DailyrideComponent } from './dailyride/dailyride.component';
 import { SuggestrideComponent } from './suggestride/suggestride.component';
 import { SignupComponent } from './signup/signup.component';
 import {RouterModule, Routes} from "@angular/router";
+import { CardComponent } from './card/card.component';
 
 
 const appRoutes: Routes = [
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     SolidariaComponent,
     DailyrideComponent,
     SuggestrideComponent,
-    SignupComponent
+    SignupComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

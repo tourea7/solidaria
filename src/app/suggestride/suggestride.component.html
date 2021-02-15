@@ -17,6 +17,10 @@
 <label for="Username"><b>Username</b></label>
 <input type="text" placeholder="Enter an Username" name="username" required>
 
+<ul>
+    <li *ngFor="let t of test"><app-card [bou]=t ></app-card></li>
+</ul>
+
 
 <hr>
 <p>Suggest the Ride</p>
