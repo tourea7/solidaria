@@ -17,20 +17,51 @@
 <label for="Username"><b>Username</b></label>
 <input type="text" placeholder="Enter an Username" name="username" required>
 
-<ul>
-    <li *ngFor="let t of test"><app-card [bou]=t ></app-card></li>
-</ul>
-
-
 <hr>
 <p>Suggest the Ride</p>
 <hr>
 
 <label for="departure"><b>Departure</b></label>
-<input type="text" placeholder="Enter your Departure" name="departure">
+<select class="input-box" name="address" required>
+    <option  value="Departure">Departure</option> 
+    <option  value="Cocody">Cocody</option>
+    <option  value="Angre">Angré</option>
+    <option  value="Deux-Plateaux">Deux-Plateaux</option>
+    <option  value="Palmeraie">Palmeraie</option>
+    <option  value="Riviera">Riviera</option>
+    <option  value="Faya">Faya</option>
+    <option  value="Bingerville">Bingerville</option>
+    <option  value="Plateau">Plateau</option>
+    <option  value="Abobo">Abobo</option>
+    <option  value="Adjamé">Adjamé</option>
+    <option  value="Yopougon">Yopougon</option>
+    <option  value="Treichville">Treichville</option>
+    <option  value="Macory">Macory</option>
+    <option  value="Koumassi">Koumassi</option>
+    <option  value="Port-Bouet">Port-Bouet</option>
+    <option  value="Bassam">Bassam</option>
+</select>
 
 <label for="arrive"><b>Arrive</b></label>
-<input type="text" placeholder="Enter your Arrive" name="arrive">
+<select class="input-box" name="address" required>
+    <option  value="arrive">Arrive</option> 
+    <option  value="Cocody">Cocody</option>
+    <option  value="Angre">Angré</option>
+    <option  value="Deux-Plateaux">Deux-Plateaux</option>
+    <option  value="Palmeraie">Palmeraie</option>
+    <option  value="Riviera">Riviera</option>
+    <option  value="Faya">Faya</option>
+    <option  value="Bingerville">Bingerville</option>
+    <option  value="Plateau">Plateau</option>
+    <option  value="Abobo">Abobo</option>
+    <option  value="Adjamé">Adjamé</option>
+    <option  value="Yopougon">Yopougon</option>
+    <option  value="Treichville">Treichville</option>
+    <option  value="Macory">Macory</option>
+    <option  value="Koumassi">Koumassi</option>
+    <option  value="Port-Bouet">Port-Bouet</option>
+    <option  value="Bassam">Bassam</option>
+</select>
 
 <label for="Date of departure"><b>Date of Departure</b></label>
 <input type="date" placeholder="Enter the Date of Departure" name="date-of-departure" required>
