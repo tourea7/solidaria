@@ -2,66 +2,68 @@
 
 
 <div class="signup">
-    <form class="signup-form">
+    <form [formGroup]="signForm" (ngSubmit)="onSubmit()" class="signup-form">
         <div class="signup-container">
          <h2 class="title">Sign Up</h2>
          <p>Please fill in this form to create an account.</p>
          <hr>
 <label for="First Name"><b>First Name</b></label>
-<input type="text" placeholder="Enter Your Frst Name" name="first_name" required>
+<input type="text" placeholder="Enter Your Frst Name" name="first_name" formControlName="first_name" required>
+
 <label for="Last Name"><b>Last Name</b></label>
-<input type="text" placeholder="Enter Your Last Name" name="last_name" required>
+<input type="text" placeholder="Enter Your Last Name" name="last_name" formControlName="last_name" required>
         
 <label for="email"><b>Email</b></label>
-<input type="text" placeholder="Enter Email" name="email" required>
+<input type="text" placeholder="Enter Email" name="email" formControlName="email" required>
 
 <label for="Username"><b>Username</b></label>
-<input type="text" placeholder="Enter an Username" name="username" required>
+<input type="text" placeholder="Enter an Username" name="username" formControlName="username" required>
 
 <label for="psw"><b>Password</b></label>
-<input type="password" placeholder="Enter Password" name="psw" required>
+<input type="password" placeholder="Enter Password" name="psw" formControlName="psw" required>
 
 <label for="psw-repeat"><b>Repeat Password</b></label>
 <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
+<label for="phone"><b>Phone</b></label>
+<input type="text" placeholder="Enter Your Phone Number" name="phone" formControlName="phone" required>
+
 <label for="Birthday"><b>Birthday</b></label>
-<input type="date" placeholder="Enter Your Birthday" name="birthday" required>
+<input type="date" placeholder="Enter Your Birthday" name="birthday" formControlName="birthday" required>
 
 <label for="CNI"><b>CNI</b></label>
-<input type="text" placeholder="Enter your CNI immatruculation" name="cni" required>
+<input type="text" placeholder="Enter your CNI immatruculation" name="cni" formControlName="cni" required>
 
 <label for="Driver"><b>Driver</b></label>
-<input type="radio" name="driver" required>
+<input type="checkbox" name="driver" (click)="driver()" required>
 
-<label for="Passenger"><b>Passenger</b></label>
-<input type="radio" name="passenger" required>
 
-<label for="file-select"><b>Upload a picture  of your CNI (both sides)</b></label>
-<input type="image" name="upload" required>
-<hr>
+<div *ngIf="isDriver">
+    
+    <hr>
 <p>In case you are a Driver</p>
 <hr>
 
 <label for="driver's license number"><b>driver's license number</b></label>
-<input type="text" placeholder="Enter your driver's license number" name="driver-license-number" >
+<input type="text" placeholder="Enter your driver's license number" name="driver_license_number" formControlName="driver_license_number" >
 
 <label for="registration number"><b>Registration Number of the Car</b></label>
-<input type="text" placeholder=" Enter your registration number of your Car" name="registration-number">
+<input type="text" placeholder=" Enter your registration number of your Car" name="registration_number" formControlName="registration_number" >
 
 <label for="card number"><b>Card Number, Gray Card</b></label>
-<input type="text" placeholder=" Enter the card number, the gray card" name="card-number">
+<input type="text" placeholder=" Enter the card number, the gray card" name="card_number" formControlName="card_number" >
 
 <label for="Car Brand"><b>Car Brand</b></label>
-<input type="text" placeholder=" Enter the Car Brand" name="car-brand">
+<input type="text" placeholder=" Enter the Car Brand" name="car_brand" formControlName="car_brand" >
 
 <label for="Commercial Type"><b>Commercial Type</b></label>
-<input type="text" placeholder=" Enter the Commercila Type" name="commercial-type">
+<input type="text" placeholder=" Enter the Commercila Type" name="commercial_type" formControlName="commercial_type" >
 
 <label for="Car Color"><b>Car Color</b></label>
-<input type="text" placeholder=" Enter the Car Color" name="car-color">
+<input type="text" placeholder=" Enter the Car Color" name="car_color" formControlName="car_color" >
 
-<label for="file-select"><b>Upload a picture  of your driver-license and gray card (both sides)</b></label>
-<input type="image" name="upload" >
+</div>
+
 <hr>
 
 <label>
@@ -71,8 +73,9 @@
 
 <div class="clearfix">
 <button type="button"  class="Cancelbtn">Cancel</button>
-<button type="submit" class="signupbtn">Sign Up</button>
+<button type="submit" class="signupbtn" (click)="loginWithEmail()">Sign Up</button>
 </div>
+<button (click)="loginWithGoogle()">Sign Up with Google</button>
         </div>
 
     </form>

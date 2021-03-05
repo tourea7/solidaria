@@ -65,8 +65,8 @@
     <div class="small-container">
         <h2 class="title"> Our Ride</h2>
         <div class="row">
-            <ul>
-                <li *ngFor="let t of test"><app-card [bou]=t ></app-card></li>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item" *ngFor="let t of test"><app-card [bou]=t ></app-card></li>
             </ul>
             
             </div>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="col-2">
                             <h1>Suggest a Ride</h1>
-                            <a href="suggestride.html" class="btn"><i class="fa fa-fw fa-plus-circle"></i>Add</a>
+                            <a (click)="navigateToSuggestride()" class="btn"><i class="fa fa-fw fa-plus-circle"></i>Add</a>
                         </div>
                      </div>
         </div>

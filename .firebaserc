@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "solidaria-c4db6": {
+      "hosting": {
+        "solidaria": [
+          "solidaria-c4db6"
+        ]
+      }
+    }
+  }
+}

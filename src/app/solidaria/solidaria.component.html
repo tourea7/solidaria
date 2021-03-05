@@ -8,8 +8,8 @@
                 <h1>"Easy, Cheap, and New Encounter"</h1>
                 <p class="title">With Solidària, the Car Ride becomes more fun, the cost of transport cheaper, and you meet new people</p>
                 <form>
-                    <a href="suggestride.html" class="btn"><i class="fa fa-fw fa-plus"></i> Suggest a Car Ride</a> 
-                    <a href="dailyride.html" class="btn"><i class="fa fa-fw fa-calendar-o"></i> Choose a Car Ride</a>
+                    <a (click)="navigateToSuggestride()" class="btn"><i class="fa fa-fw fa-plus"></i> Suggest a Car Ride</a> 
+                    <a (click)="navigateToDailyride()" class="btn"><i class="fa fa-fw fa-calendar-o"></i> Choose a Car Ride</a>
                 </form>
             </div>
     </div>
@@ -18,57 +18,16 @@
 <!---------our ride--------->
 <div class="Ride">
     <h2 class="title"> Our Ride</h2>
+    
     <div class="row">
-        <div class="col-4">
-            <div class="card">
-                <h1>Bassam >> Abidjan (Plateau)</h1>
-             <p class="price">1000 FCFA</p>
-             <p>Number of passengers</p>
-             <div class="passenger">
-                <i class="fa fa-fw fa-male"></i>
-                <i class="fa fa-fw fa-male"></i>
-             </div>
-            </div>
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" *ngFor="let t of test"><app-card [bou]=t ></app-card></li>
+        </ul>
+        
         </div>
-        <div class="col-4">
-            <div class="card">
-                <h1>Bouake>> Abidjan</h1>
-             <p class="price">1000 FCFA</p>
-             <p>Number of passengers</p>
-             <div class="passenger">
-                <i class="fa fa-fw fa-male"></i>
-                <i class="fa fa-fw fa-male"></i>
-             </div>
-            </div>
+        <a (click)="navigateToDailyride()" class="btn">More</a>
         </div>
-        <div class="col-4">
-            <div class="card">
-                <h1> Cocody Angre >> Treichville</h1>
-             <p class="price">1000 FCFA</p>
-             <p>Number of passengers</p>
-             <div class="passenger">
-                <i class="fa fa-fw fa-male"></i>
-                <i class="fa fa-fw fa-male"></i>
-                <i class="fa fa-fw fa-male"></i>
-                <i class="fa fa-fw fa-male"></i>
-             </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <h1>Abidjan >> Yamoussoukro</h1>
-             <p class="price">1000 FCFA</p>
-             <p>Number of passengers</p>
-             <div class="passenger">
-                <i class="fa fa-fw fa-male"></i>
-                <i class="fa fa-fw fa-male"></i>
-                <i class="fa fa-fw fa-male"></i>
-                <i class="fa fa-fw fa-male"></i>
-             </div>
-            </div>
-        </div>
-    </div>
-</div>
+    
 <!-------- Marques --------->
 <div class="marques">
 <div class="small-container">

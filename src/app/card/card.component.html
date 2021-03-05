@@ -6,8 +6,10 @@
      <p class="price">{{bou.price}}</p>
      <p>Number of passengers</p>
      <div class="passenger">
-        <ul>
-            <li *ngFor="let s of bou.seat"><i class="fa fa-fw fa-male"></i></li>
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"  *ngFor="let s of bou.seat">
+                <i class="fa fa-fw fa-male"></i>
+            </li>
         </ul>
      </div>
     </div>

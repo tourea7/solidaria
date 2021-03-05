@@ -10,6 +10,12 @@ import { SuggestrideComponent } from './suggestride/suggestride.component';
 import { SignupComponent } from './signup/signup.component';
 import {RouterModule, Routes} from "@angular/router";
 import { CardComponent } from './card/card.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -34,8 +40,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

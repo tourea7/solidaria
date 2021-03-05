@@ -7,9 +7,10 @@ import { Bou } from '../model/bou';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() bou = Bou
+  @Input() bou:Bou = new Bou("", "", "", "", "", 0);
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
