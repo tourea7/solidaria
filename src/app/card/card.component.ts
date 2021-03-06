@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Bou } from '../model/bou';
+import { Ride } from '../model/Ride';
 
 @Component({
   selector: 'app-card',
@@ -7,7 +7,7 @@ import { Bou } from '../model/bou';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() bou:Bou = new Bou("", "", "", "", "", 0);
+  @Input() ride:Ride = new Ride().builder("", "", "", "", "", 0);
 
   constructor() { 
   }

@@ -2,18 +2,18 @@
 
 
     <div class="login">
-        <form class="login-form">
+        <form [formGroup]="signForm" (ngSubmit)="onSubmit()" class="login-form">
             <div class="imgcontainer">
                 <img src="assets/avatar.png" alt="Avatar" class="avatar">  
             </div>
             <div class="login-container">
-                <label for="uname"><b>Username</b></label>
-<input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="email"><b>Email</b></label>
+<input type="email" placeholder="Enter your Email" name="email" formControlName="email" required>
 
 <label for="psw"><b>Password</b></label>
-<input type="password" placeholder="Enter Password" name="psw" required>
+<input type="password" placeholder="Enter Password" name="psw" formControlName="psw" required>
 
-<button type="submit">Login</button>
+<button type="submit" (click)="loginWithEmail()">Login</button>
 <label>
 <input type="checkbox" checked="checked" name="remember"> Remember me</label>
             </div>
@@ -21,7 +21,7 @@
                 <button type="button" class="cancelbtn">Cancel</button>
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
-
+            <button (click)="loginWithGoogle()">Login with Google</button>
         </form>
     </div>
 

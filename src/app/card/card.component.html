@@ -1,13 +1,13 @@
 <div class="col-4">
     <div class="card">
-        <h1>{{bou.departure}} >> {{bou.arrive}}</h1>
-        <p>Date:{{bou.date}}</p>
-        <p>Hours of Departure : {{bou.hours}}</p>
-     <p class="price">{{bou.price}}</p>
+        <h1>{{ride.departure}} >> {{ride.arrive}}</h1>
+        <p>Date:{{ride.date}}</p>
+        <p>Hours of Departure : {{ride.hours}}</p>
+     <p class="price">{{ride.price}} F CFA</p>
      <p>Number of passengers</p>
      <div class="passenger">
         <ul class="list-group list-group-horizontal">
-            <li class="list-group-item"  *ngFor="let s of bou.seat">
+            <li class="list-group-item"  *ngFor="let s of ride.seat">
                 <i class="fa fa-fw fa-male"></i>
             </li>
         </ul>

@@ -8,8 +8,8 @@
                 <h1>"Easy, Cheap, and New Encounter"</h1>
                 <p class="title">With Solidària, the Car Ride becomes more fun, the cost of transport cheaper, and you meet new people</p>
                 <form>
-                    <a (click)="navigateToSuggestride()" class="btn"><i class="fa fa-fw fa-plus"></i> Suggest a Car Ride</a> 
-                    <a (click)="navigateToDailyride()" class="btn"><i class="fa fa-fw fa-calendar-o"></i> Choose a Car Ride</a>
+                    <a *ngIf="isAuth" (click)="navigateToSuggestride()" class="btn"><i class="fa fa-fw fa-plus"></i> Suggest a Car Ride</a> 
+                    <a *ngIf="isAuth" (click)="navigateToDailyride()" class="btn"><i class="fa fa-fw fa-calendar-o"></i> Choose a Car Ride</a>
                 </form>
             </div>
     </div>
@@ -21,11 +21,11 @@
     
     <div class="row">
         <ul class="list-group list-group-horizontal">
-            <li class="list-group-item" *ngFor="let t of test"><app-card [bou]=t ></app-card></li>
+            <li class="list-group-item" *ngFor="let t of test"><app-card [ride]=t ></app-card></li>
         </ul>
         
         </div>
-        <a (click)="navigateToDailyride()" class="btn">More</a>
+        <a *ngIf="isAuth" (click)="navigateToDailyride()" class="btn">More</a>
         </div>
     
 <!-------- Marques --------->

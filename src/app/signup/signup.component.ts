@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import firebase from 'firebase/app';
-import { Users } from '../model/Users';
+import { AuthService } from '../auth.service';
+import { Users, UsersInterface } from '../model/Users';
 
 @Component({
   selector: 'app-signup',
@@ -45,7 +47,7 @@ export class SignupComponent implements OnInit {
     car_color: new FormControl(''),
   })
 
-  constructor(public auth:AngularFireAuth, public firestore:AngularFirestore) { }
+  constructor(public auth:AngularFireAuth, public firestore:AngularFirestore, private router:Router, public authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -82,7 +84,7 @@ export class SignupComponent implements OnInit {
       if(userCredential.user?.email != undefined){
         this.email = userCredential.user?.email
       }
-      this.firestore.collection('users').add({
+      this.firestore.collection('users').doc(userCredential.user?.uid).set({
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
@@ -97,14 +99,18 @@ export class SignupComponent implements OnInit {
         car_brand: this.car_brand,
         commercial_type: this.commercial_type,
         car_color: this.car_color
-      })
+      }).then(()=>{
+          this.authService.userObservable = this.firestore.collection("users").doc<UsersInterface>(userCredential.user?.uid)
+        .valueChanges()
+        this.authService.isAuth.next(true);      })
+      this.router.navigate(['solidaria'])
     });
   }
 
   loginWithEmail() {
     this.onSubmit()
     this.auth.createUserWithEmailAndPassword(this.email, this.psw).then(userCredential => {
-      this.firestore.collection('users').add({
+      this.firestore.collection('users').doc(userCredential.user?.uid).set({
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
@@ -119,7 +125,12 @@ export class SignupComponent implements OnInit {
         car_brand: this.car_brand,
         commercial_type: this.commercial_type,
         car_color: this.car_color
-      })
+      }).then(()=>{
+        this.authService.userObservable = this.firestore.collection("users").doc<UsersInterface>(userCredential.user?.uid)
+      .valueChanges()
+      this.authService.isAuth.next(true);
+    })
+      this.router.navigate(['solidaria'])
     });
   }
 

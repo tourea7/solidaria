@@ -1,28 +1,17 @@
 
 
 <div class="suggest">
-    <form class="suggest-form">
+    <form [formGroup]="rideForm" (ngSubmit)="onSubmit()" class="suggest-form">
         <div class="suggest-container">
             <h2 class="title">Suggest a Car Ride</h2>
             <p>Please fill in this form to suggest a Car Ride</p>
-            <hr>
-           
-
-<label for="Name"><b>Name</b></label>
-<input type="text" placeholder="Enter Your Name" name="name" required>
-        
-<label for="email"><b>Email</b></label>
-<input type="text" placeholder="Enter Email" name="email" required>
-
-<label for="Username"><b>Username</b></label>
-<input type="text" placeholder="Enter an Username" name="username" required>
 
 <hr>
 <p>Suggest the Ride</p>
 <hr>
 
 <label for="departure"><b>Departure</b></label>
-<select class="input-box" name="address" required>
+<select class="input-box" name="address" formControlName="departure" required>
     <option  value="Departure">Departure</option> 
     <option  value="Cocody">Cocody</option>
     <option  value="Angre">Angré</option>
@@ -43,7 +32,7 @@
 </select>
 
 <label for="arrive"><b>Arrive</b></label>
-<select class="input-box" name="address" required>
+<select class="input-box" name="address" formControlName="arrive" required>
     <option  value="arrive">Arrive</option> 
     <option  value="Cocody">Cocody</option>
     <option  value="Angre">Angré</option>
@@ -64,17 +53,17 @@
 </select>
 
 <label for="Date of departure"><b>Date of Departure</b></label>
-<input type="date" placeholder="Enter the Date of Departure" name="date-of-departure" required>
+<input type="date" placeholder="Enter the Date of Departure" name="date-of-departure" formControlName="date" required>
 
 <label for="Hours of departure"><b>Hours of Departure</b></label>
-<input type="text" placeholder="Enter the Hours of Departure" name="hours-of-departure" required>
+<input type="time" value="7:00" placeholder="Enter the Hours of Departure" name="hours-of-departure" formControlName="hours" required>
 
 <label for="Number of passenger"><b>Number of Passenger</b></label>
-<input type="number" placeholder="Enter the Number of free seats" name="number of passenger" required>
+<input type="number" placeholder="Enter the Number of free seats" name="number of passenger" formControlName="seat" required>
 
 <div class="clearfix">
 <button type="button"  class="Cancelbtn">Cancel</button>
-<button type="submit" class="signupbtn">Sign Up</button>
+<button type="submit" class="signupbtn" (click)="onSubmit()">Suggest</button>
 </div>
         </div>
 
