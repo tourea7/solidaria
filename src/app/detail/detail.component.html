@@ -4,6 +4,27 @@
             <div class="col-2">
                 <img src="assets/img4.jpg" width="500px">
             </div>
+            <div class="col-2">
+                <h2 class="title">Ride Detail</h2>
+                <h1>Departure >> Arrive</h1>
+                <p>Date: </p>
+                <p>Hours of departure: </p>
+                <p class="price"> F CFA</p>
+                <p>Number of passengers</p>
+                <div class="passenger">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item"  *ngFor="let s of ride.seat">
+                            <i class="fa fa-fw fa-male"></i>
+                        </li>
+                    </ul>
+                 </div>
+                 <p>How many are you?</p>
+                 <form>
+                    <label for="Number of passenger"><b>Number of Passenger</b></label>
+                    <input type="number" placeholder="Enter how many are you?" name="number of passenger" formControlName="seat" required>
+                 </form>
+                 <a href="#" class="btn"><i class="fa fa-fw fa-bag"></i> Buy</a>
+            </div>
         </div>
     </div>
 </div>

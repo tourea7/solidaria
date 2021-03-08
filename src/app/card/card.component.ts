@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Ride } from '../model/Ride';
 
 @Component({
@@ -9,10 +10,13 @@ import { Ride } from '../model/Ride';
 export class CardComponent implements OnInit {
   @Input() ride:Ride = new Ride().builder("", "", "", "", "", 0);
 
-  constructor() { 
+  constructor(private router:Router) { 
   }
 
   ngOnInit(): void {
   }
 
+  navigateToDetail(){
+    this.router.navigate(['detail'])
+  }
 }

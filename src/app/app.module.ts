@@ -18,6 +18,8 @@ import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RidedetailComponent } from './ridedetail/ridedetail.component';
 import { DetailComponent } from './detail/detail.component';
+import { BuyComponent } from './buy/buy.component';
+import { DriverinfoComponent } from './driverinfo/driverinfo.component';
 
 
 const appRoutes: Routes = [
@@ -40,7 +42,9 @@ const appRoutes: Routes = [
     SignupComponent,
     CardComponent,
     RidedetailComponent,
-    DetailComponent
+    DetailComponent,
+    BuyComponent,
+    DriverinfoComponent
   ],
   imports: [
     BrowserModule,
