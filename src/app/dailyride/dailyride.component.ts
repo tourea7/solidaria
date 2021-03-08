@@ -23,7 +23,7 @@ export class DailyrideComponent implements OnInit {
         })
     })
     this.test.add(
-      new Ride().builder("Bassam", "Treichville", "2021-02-05", "7:00", "2000", 2)
+      new Ride().builder("Bassam", "Treichville", "2021-02-05", "7:00", "1000", 2)
     );
     this.test.add(
       new Ride().builder("Yopougon", "Treichville", "2021-02-08", "9:00", "1000", 4)

@@ -18,7 +18,7 @@ export class SuggestrideComponent implements OnInit {
   arrive: String = ""
   date: String= ""
   hours: String = ""
-  price: String = "1000"
+  price: String = "500"
   seat: number = 0
   user = new Users()
 
