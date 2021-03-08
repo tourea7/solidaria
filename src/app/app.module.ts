@@ -17,6 +17,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RidedetailComponent } from './ridedetail/ridedetail.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 const appRoutes: Routes = [
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     SuggestrideComponent,
     SignupComponent,
     CardComponent,
-    RidedetailComponent
+    RidedetailComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
