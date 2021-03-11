@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { Ride } from '../model/Ride';
 
 @Component({
@@ -10,13 +11,16 @@ import { Ride } from '../model/Ride';
 export class CardComponent implements OnInit {
   @Input() ride:Ride = new Ride().builder("", "", "", "", "", 0);
 
-  constructor(private router:Router) { 
+  
+  constructor(private router:Router, private authService: AuthService) { 
+    
   }
 
   ngOnInit(): void {
   }
 
   navigateToDetail(){
+    this.authService.rideSelected.next(this.ride)
     this.router.navigate(['detail'])
   }
 }

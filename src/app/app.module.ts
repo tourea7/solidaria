@@ -16,7 +16,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RidedetailComponent } from './ridedetail/ridedetail.component';
 import { DetailComponent } from './detail/detail.component';
 import { BuyComponent } from './buy/buy.component';
 import { DriverinfoComponent } from './driverinfo/driverinfo.component';
@@ -28,6 +27,7 @@ const appRoutes: Routes = [
 { path: 'dailyride' , component: DailyrideComponent},
 { path: 'suggestride' , component: SuggestrideComponent},
 { path: 'signup' , component:  SignupComponent },
+{path: 'detail' , component: DetailComponent},
 { path:'' , component: SolidariaComponent }
 ];
 
@@ -41,7 +41,6 @@ const appRoutes: Routes = [
     SuggestrideComponent,
     SignupComponent,
     CardComponent,
-    RidedetailComponent,
     DetailComponent,
     BuyComponent,
     DriverinfoComponent

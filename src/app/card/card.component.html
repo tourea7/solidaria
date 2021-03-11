@@ -1,5 +1,5 @@
-<div *ngIf="isAuth" (click)="navigateToDetail()" class="col-4">
-    <div class="card">
+<div class="col-4">
+    <div class="card" (click)="navigateToDetail()" >
         <h1>{{ride.departure}} >> {{ride.arrive}}</h1>
         <p>Date:{{ride.date}}</p>
         <p>Hours of Departure : {{ride.hours}}</p>
