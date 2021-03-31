@@ -19,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
 import { BuyComponent } from './buy/buy.component';
 import { DriverinfoComponent } from './driverinfo/driverinfo.component';
+import { MapComponent } from './map/map.component';
+import {AgmCoreModule} from '@agm/core';
 
 
 const appRoutes: Routes = [
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
 { path: 'suggestride' , component: SuggestrideComponent},
 { path: 'signup' , component:  SignupComponent },
 {path: 'detail' , component: DetailComponent},
+{path: 'map' , component: MapComponent},
 { path:'' , component: SolidariaComponent }
 ];
 
@@ -43,7 +46,8 @@ const appRoutes: Routes = [
     CardComponent,
     DetailComponent,
     BuyComponent,
-    DriverinfoComponent
+    DriverinfoComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,10 @@ const appRoutes: Routes = [
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDi35iwEpU80wr-xxR8oCeOSw92QZQ-pKQ'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

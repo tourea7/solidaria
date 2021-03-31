@@ -394,3 +394,7 @@ hr {
   .suggest-container{
     padding: 16px; 
   }
+
+  agm-map{
+    height: 400px;
+  }
